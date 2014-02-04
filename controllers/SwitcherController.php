@@ -43,16 +43,19 @@ class SwitcherController extends PluginController
         if ($this->app->request->isPost()) {
             $data = $this->app->request->getPost('data');
             if(strtolower($data) !== 'default') {
-                setcookie("switcher", $data, 9999999999); 
+                setcookie('switcher', $data, 9999999999); 
             } else {
-                setcookie("switcher", "", time()-3600);
+                setcookie('switcher', '', time()-3600);
             }
             $this->app->flash->set('success', 'Theme changed.');
             $this->redirect(array('plugin'=>'switcher', 'controller'=>'switcher', 'action'=>'index'));
         }
         
+        $cookie = isset($_COOKIE['switcher']) ? $_COOKIE['switcher'] : 'Default';
+        
 		echo $this->render('index', array(
                 'themes'=>$themes, 
+                'cookie'=>$cookie, 
             ));
 
 	}

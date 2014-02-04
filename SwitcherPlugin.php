@@ -1,31 +1,11 @@
 <?php
 
-/**
- *
- */
 class SwitcherPlugin extends Plugin
 {
-	/**
-	 *
-	 */
-	protected $name='Switcher';
 
-	/**
-	 *
-	 */
+	protected $name='ThemeSwitcher';
 	protected $version='1.0';
 
-	/**
-	 *
-	 */
-	public function permissions()
-	{
-		//return array('skeleton-editor', 'skeleton-administrator', 'skeleton-developer');
-	}
-
-	/**
-	 *
-	 */
 	public function navItems()
 	{
 		return array(
@@ -40,9 +20,6 @@ class SwitcherPlugin extends Plugin
 		);
 	}
 
-	/**
-	 *
-	 */
 	public function onAppStart()
 	{
         if(isset($_COOKIE['switcher'])) {
@@ -50,11 +27,4 @@ class SwitcherPlugin extends Plugin
         }
 	}
 
-	/**
-	 *
-	 */
-	public function onAppEnd()
-	{
-
-	}
 }
