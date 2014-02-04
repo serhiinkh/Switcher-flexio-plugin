@@ -3,7 +3,7 @@
             <div class="form-group">
             <select name="data" class="form-control">
             <?php foreach ($this->themes as $theme): ?>
-                <option value="<?php echo $theme; ?>" <?php echo ($_COOKIE['switcher'] == $theme) ? 'selected' : ''; ?> ><?php echo $theme; ?></option>
+                <option value="<?php echo $theme; ?>" <?php echo (isset($_COOKIE['switcher']) == $theme) ? 'selected' : ''; ?> ><?php echo $theme; ?></option>
             <?php endforeach; ?>
             </select>
             <input type="submit" class="btn btn-default" value="Set this theme" />
