@@ -1,14 +1,15 @@
-
-    <form class="form-inline" method="post">
-        <div class="form-group">
-        <select name="data" class="form-control">
-        <?php foreach ($this->themes as $theme): ?>
-            <option value="<?php echo $theme; ?>"><?php echo $theme; ?></option>
-        <?php endforeach; ?>
-        </select>
-        <input type="submit" class="btn btn-default" value="Set this theme" />
-        </div>
-    </form>
+    <div class="page-header">
+        <form class="form-inline" method="post">
+            <div class="form-group">
+            <select name="data" class="form-control">
+            <?php foreach ($this->themes as $theme): ?>
+                <option value="<?php echo $theme; ?>"><?php echo $theme; ?></option>
+            <?php endforeach; ?>
+            </select>
+            <input type="submit" class="btn btn-default" value="Set this theme" />
+            </div>
+        </form>
+    </div>
       <!-- Main jumbotron for a primary marketing message or call to action -->
       <div class="jumbotron">
         <h1>Hello, world!</h1>

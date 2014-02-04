@@ -25,16 +25,30 @@ class SwitcherController extends PluginController
 	public function indexAction()
 	{
         $themes = array(
+            'Default',
             'Amelia',
             'Cerulean',
             'Cosmo',
             'Cyborg',
             'Flatly',
+            'Journal',
+            'Readable',
+            'Simplex',
+            'Slate',
+            'Spacelab',
+            'United',
+            'Yeti',
         );
         
         if ($this->app->request->isPost()) {
             $data = $this->app->request->getPost('data');
-            setcookie("switcher", $data, 9999999999); 
+            if(strtolower($data) !== 'default') {
+                setcookie("switcher", $data, 9999999999); 
+            } else {
+                setcookie("switcher", "", time()-3600);
+            }
+            $this->app->flash->set('success', 'Theme changed.');
+            $this->redirect(array('plugin', 'switcher'));
         }
         
 		echo $this->render('index', array(

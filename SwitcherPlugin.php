@@ -45,9 +45,9 @@ class SwitcherPlugin extends Plugin
 	 */
 	public function onAppStart()
 	{
-        http://bootswatch.com/amelia/bootstrap.css'
-		$this->app->assets->add('http://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrasssssssssssssp.min.css', AssetManager::TYPE_CSS, AssetManager::POS_BODY_TOP);
-        var_dump($_COOKIE);
+        if(isset($_COOKIE['switcher'])) {
+            $this->app->assets->add('http://bootswatch.com/'. strtolower($_COOKIE['switcher']) . '/bootstrap.css', AssetManager::TYPE_CSS, AssetManager::POS_BODY_TOP);
+        }
 	}
 
 	/**
