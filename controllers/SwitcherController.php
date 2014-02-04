@@ -48,7 +48,7 @@ class SwitcherController extends PluginController
                 setcookie("switcher", "", time()-3600);
             }
             $this->app->flash->set('success', 'Theme changed.');
-            $this->redirect(array('plugin', 'switcher'));
+            $this->redirect(array('plugin'=>'switcher', 'controller'=>'switcher', 'action'=>'index'));
         }
         
 		echo $this->render('index', array(
